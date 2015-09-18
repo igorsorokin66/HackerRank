@@ -3,5 +3,7 @@ __email__ = 'igor.sorokin66@gmail.com'
 __status__ = 'Completed'
 '''
 Problem Statement:
-https://www.hackerrank.com/challenges/
+https://www.hackerrank.com/challenges/simple-array-sum
 '''
+waste = input()
+print(sum([int(i) for i in input().split()]))

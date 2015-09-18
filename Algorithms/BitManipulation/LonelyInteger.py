@@ -3,5 +3,15 @@ __email__ = 'igor.sorokin66@gmail.com'
 __status__ = 'Completed'
 '''
 Problem Statement:
-https://www.hackerrank.com/challenges/
+https://www.hackerrank.com/challenges/lonely-integer
 '''
+waste = int(input())
+
+hash = {}
+elements = input().split(" ")
+for i in range(len(elements)):
+    if elements[i] in hash:
+        del hash[elements[i]]
+    else:
+        hash[elements[i]] = i
+print(hash.keys()[0])

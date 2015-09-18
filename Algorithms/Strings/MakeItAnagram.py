@@ -16,7 +16,7 @@ def diff(a, b):
     return count
 
 hashA = {}
-a = list(raw_input())
+a = list(input())
 for i in a:
     if i in hashA:
         hashA[i] += 1
@@ -24,7 +24,7 @@ for i in a:
         hashA[i] = 1
 
 hashB = {}
-b = list(raw_input())
+b = list(input())
 for i in b:
     if i in hashB:
         hashB[i] += 1
