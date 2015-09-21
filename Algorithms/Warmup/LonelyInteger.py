@@ -6,12 +6,12 @@ Problem Statement:
 https://www.hackerrank.com/challenges/lonely-integer
 '''
 
-waste = int(raw_input())
+waste = int(input())
 hash = {}
-elements = raw_input().split(" ")
+elements = input().split(" ")
 for i in range(len(elements)):
     if elements[i] in hash:
         del hash[elements[i]]
     else:
         hash[elements[i]] = i
-print hash.values()[0]
+print(hash.values()[0])
