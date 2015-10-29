@@ -5,8 +5,30 @@ __status__ = 'Incomplete'
 Problem Statement:
 https://www.hackerrank.com/challenges/half
 '''
-for t in range(int(input())):
-    n = int(input())
+def perm(orphans):
+    for i in range(len(orphans)):
+        newOrphans = list(orphans)
+        if newOrphans[i] == 1:
+            del newOrphans[i]
+        else:
+            newOrphans[i] /= 2
+'''
+32 1
+32 8 4 1
+    16 8 4 1
+        16 8 4
+            8 4 2
+            8 4 1
+                4 2 1
+1 2 4 8 16 32
+1 2 3 4  5  6
+6 4 3 1
+    5 4 3 1
+64 32 16 8 4 2 1
+'''
+
+for t in range(1):#int(input())):
+    n = 64#int(input())
     arr = []
     for i in range(n, 0, -1):
         arr.append(i)
@@ -18,14 +40,23 @@ for t in range(int(input())):
     print(arr)
 
     #orphans
-    newArr = []
+    orphans = []
     for a in arr:
-        if a not in newArr:
-            newArr.append(a)
+        if a not in orphans:
+            orphans.append(a)
         else:
-            newArr.remove(a)
-    print("Orphans: " + str(newArr))
+            orphans.remove(a)
+    print("Orphans: " + str(orphans))
 
+    newOrphans = list(set(arr).difference(set(orphans)))
+    print("Possible Orphans: " + str(newOrphans))
+
+    for newOrphan in newOrphans:
+        choice = list(orphans)
+        choice.append(newOrphan)
+        print(choice)
+        print(perm(choice))
+    '''
     if len(newArr) == 1:
         print(newArr[0])
     elif len(newArr) == 2:#two orphans, you cant remove either
@@ -38,3 +69,8 @@ for t in range(int(input())):
             print(diff)
         else:
             print(max(newOrphans))
+    '''
+
+'''
+8 1
+'''
