@@ -24,4 +24,5 @@ for i in range(waste):
             dicto[a[0]] = [a[1]]
 
 for k in sorted(dicto):
+    #print(" ".join(dicto[k]), end=" ") #both of these work but this is faster?
     print(*dicto[k], sep=" ", end=" ")
