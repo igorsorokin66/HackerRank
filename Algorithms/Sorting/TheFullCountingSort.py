@@ -12,16 +12,17 @@ for i in range(waste):
 dicto = {}
 for i in range(waste):
     a = arr[i]
+    k = int(a[0])
     if i < waste//2:
-        if a[0] in dicto:
-            dicto[a[0]] += "-"
+        if k in dicto:
+            dicto[k] += "-"
         else:
-            dicto[a[0]] = ["-"]
+            dicto[k] = ["-"]
     else:
-        if a[0] in dicto:
-            dicto[a[0]].append(a[1])
+        if k in dicto:
+            dicto[k].append(a[1])
         else:
-            dicto[a[0]] = [a[1]]
+            dicto[k] = [a[1]]
 
 for k in sorted(dicto):
     #print(" ".join(dicto[k]), end=" ") #both of these work but this is faster?
